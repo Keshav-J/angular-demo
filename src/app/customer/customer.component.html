@@ -1,0 +1,14 @@
+<div class="customer">
+    <img src="{{customer.avatar}}" />
+    <div class="customer-info">
+        <div class="name">
+            {{ customer.first_name }}
+            <span *ngIf="showLastName">
+                {{ customer.last_name }}
+            </span>
+        </div>
+        <div class="email">
+            {{ customer.email }} {{ customer.revenue | currency }}
+        </div>
+    </div>
+</div>

@@ -1,1 +1,29 @@
-<h1> Hello world! </h1>
+<button (click)="toggleLastName()">
+    {{ showLastName ? 'Hide Last Name' : 'Show Last Name' }}
+</button>
+
+<div>
+    <input [(ngModel)]="searchTerm" placeholder="Search Customer" />
+</div>
+
+<ng-container *ngFor="let cust of customers">
+    <ng-container *ngIf="searchTerm ? validate(cust) : true">
+        <app-customer
+            [customer]="cust"
+            [showLastName]="showLastName"
+        ></app-customer>
+    </ng-container>
+</ng-container>
+
+<input
+    [(ngModel)]="pageNumber"
+    (ngModelChange)="getCustomers(pageNumber)"
+    [ngModelOptions]="{updateOn: 'blur'}"
+/>
+
+<button (click)="previousPage()" *ngIf="showPrevious">
+    Previous Page
+</button>
+<button (click)="nextPage()" *ngIf="showNext">
+    Next Page
+</button>
