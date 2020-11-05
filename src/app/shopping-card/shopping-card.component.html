@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="overlay next-page" [routerLink]="['/product', product.id]"></div>
+  
+  <div class="favourites" (click)="toggleFavourite()">
+    <img src="{{ product.isFavourite ? 'https://i.ibb.co/gRXcZRD/heart-filled.png' : 'https://i.ibb.co/f2wT0N2/heart.png'}}"
+          class="{{ product.isFavourite ? 'filled' : 'empty' }}"/>
+    <div class="overlay"></div>
+  </div>
+  <img class="image" src="{{ product.image }}" />
+  <div class="desc">
+    <h2 class="name"> {{ product.name }} </h2>
+    <p class="details">
+      {{ product.desc }}
+    </p>
+    <div>
+      <span class="actual-price"> ₹ <b> {{ product.actual_price }} </b> </span>
+      <span class="old-price" *ngIf="(product.actual_price < product.old_price)"> ₹ {{ product.old_price }} </span>
+    </div>
+  </div>
+  <div class="offer" *ngIf="product.offer!=''">
+      <span> {{ product.offer }} </span>
+  </div>
+  <div class="rating">
+    <ng-container *ngFor="let x of ratings">
+      <i class="{{ product.rating > x ? 'filled' : 'empty' }}"></i>
+    </ng-container>
+  </div>
+  <div class="add-to-cart">
+    <button class="btn" id="addToCart" (click)="addToCart()"> 🛒 Add to Cart </button>
+  </div>
+</div>
