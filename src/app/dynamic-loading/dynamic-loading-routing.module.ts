@@ -1,16 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SobreComponent } from './sobre/sobre.component';
+import { DynamicLoadingComponent } from './dynamic-loading.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SobreComponent,
-    pathMatch: 'full'
-  },
-  {
-    path: 'asd',
-    component: SobreComponent
+    component: DynamicLoadingComponent
   }
 ];
 
@@ -18,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class LazyRoutingModule { }
+export class DynamicLoadingRoutingModule { }
