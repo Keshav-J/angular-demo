@@ -1,5 +1,14 @@
 <p>dynamic-loading works!</p>
+To be loaded:
+<ng-container *ngIf="comp;else secondComponent">
+    <app-first></app-first>
+</ng-container>
+<ng-template #secondComponent>
+    <app-second></app-second>
+</ng-template>
 <input type="checkbox" [(ngModel)]="comp">
+<input type="radio" [(ngModel)]="comp" [value]="true">
+<input type="radio" [(ngModel)]="comp" [value]="false">
 <button (click)="load()">Load</button>
 <button (click)="remove()">Remove</button>
 
