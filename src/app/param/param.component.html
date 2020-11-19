@@ -1,3 +1,9 @@
 <p>param works!</p>
 <input type="text" [(ngModel)]="inp">
 <button (click)="change()">change</button>
+<button (click)="openChild()">open</button>
+<button (click)="closeChild()">close</button>
+<a [routerLink]="['../', '01', 'child']">open</a>
+<a [routerLink]="['../', '01']">close</a>
+<button (click)="toggleChild()">toggle</button>
+<router-outlet></router-outlet>

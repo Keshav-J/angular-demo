@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { ChildComponent } from './param/child/child.component';
 import { ParamComponent } from './param/param.component';
 
 const routes: Routes = [
@@ -13,14 +14,15 @@ const routes: Routes = [
     loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule)
   },
   {
-    path: 'multi/:a/:b/end',
-    component: ParamComponent
+    path: 'param',
+    loadChildren: () => import('./param/param.module')
+                        .then(m => m.ParamModule),
   },
   {
     path: 'dynamicLoading',
     loadChildren: () => import('./dynamic-loading/dynamic-loading.module')
                         .then(m => m.DynamicLoadingModule)
-  } /* ,
+  }/* ,
   {
     path: '**',
     redirectTo: '/'
