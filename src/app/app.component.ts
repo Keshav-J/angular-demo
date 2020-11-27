@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'proj01-demo';
+
+  dataPassed: string;
+  subscription: Subscription;
+
+  constructor(private service: AppService) {
+    this.subscription = this.service.getData().subscribe(x => {
+      this.dataPassed = x;
+    });
+  }
+
 }
