@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { ChildComponent } from './param/child/child.component';
-import { ParamComponent } from './param/param.component';
 
 const routes: Routes = [
   {
@@ -22,11 +20,16 @@ const routes: Routes = [
     path: 'dynamicLoading',
     loadChildren: () => import('./dynamic-loading/dynamic-loading.module')
                         .then(m => m.DynamicLoadingModule)
-  }/* ,
+  },
+  {
+    path: 'custom-url-matcher',
+    loadChildren: () => import('./custom-url-matcher/custom-url-matcher.module')
+                        .then(m => m.CustomUrlMatcherModule)
+  },
   {
     path: '**',
     redirectTo: '/'
-  } */
+  }
 ];
 
 @NgModule({
