@@ -1,0 +1,33 @@
+$bg-color: #000000;
+$text-color: #ffffff;
+
+
+$theme1-bg-color: #808080;
+$theme1-text-color: #000000;
+
+$theme2-bg-color: #ff0000;
+$theme2-text-color: #ffffff;
+
+$theme3-bg-color: #00ff00;
+$theme3-text-color: #000000;
+
+
+.container-1 {
+    background-color: $bg-color;
+    color: $text-color;
+
+    &.theme1 {
+        background-color: $theme1-bg-color;
+        color: $theme1-text-color;
+    }
+
+    &.theme2 {
+        background-color: $theme2-bg-color;
+        color: $theme2-text-color;
+    }
+
+    &.theme3 {
+        background-color: $theme3-bg-color;
+        color: $theme3-text-color;
+    }
+}
