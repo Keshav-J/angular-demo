@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ThemeComponent } from './theme/theme.component';
 
 const routes: Routes = [
   {
     path: 'theme',
-    component: ThemeComponent
+    loadChildren: () => import('./theme/theme.module')
+                        .then(m => m.ThemeModule)
+  },
+  {
+    path: 'child-styling',
+    loadChildren: () => import('./child-styling/child-styling.module')
+                        .then(m => m.ChildStylingModule)
   }
 ];
 

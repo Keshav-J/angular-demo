@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ThemeComponent } from './theme.component';
+import { ChildStylingComponent } from './child-styling.component';
 
 const routes: Routes = [
   {
-    path: '**',
-    component: ThemeComponent
+    path: '',
+    component: ChildStylingComponent
   }
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ThemeRoutingModule { }
+export class ChildStylingRoutingModule { }

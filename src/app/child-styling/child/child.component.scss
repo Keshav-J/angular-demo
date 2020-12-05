@@ -1,0 +1,13 @@
+// Selects the host component - applies css to <app-child> selector
+:host {
+    display: block;
+    border: 1px solid black;
+    width: 100px;
+    background-color: red;
+    color: blue;
+}
+
+// Applies CSS when any ancestor has .theme-light class name
+:host-context(.theme-light) {
+    color: white;
+}
