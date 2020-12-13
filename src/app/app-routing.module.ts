@@ -11,6 +11,11 @@ const routes: Routes = [
     path: 'child-styling',
     loadChildren: () => import('./child-styling/child-styling.module')
                         .then(m => m.ChildStylingModule)
+  },
+  {
+    path: 'variable-scope',
+    loadChildren: () => import('./variable-scope/variable-scope.module')
+                        .then(m => m.VariableScopeModule)
   }
 ];
 
