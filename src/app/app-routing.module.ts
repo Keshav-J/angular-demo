@@ -16,6 +16,11 @@ const routes: Routes = [
     path: 'variable-scope',
     loadChildren: () => import('./variable-scope/variable-scope.module')
                         .then(m => m.VariableScopeModule)
+  },
+  {
+    path: 'tailwind',
+    loadChildren: () => import('./tailwind/tailwind.module')
+                        .then(m => m.TailwindModule)
   }
 ];
 
